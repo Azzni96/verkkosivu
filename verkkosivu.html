@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpage</title>
+    <link rel="stylesheet" href="verkkosivu.css" />
+  </head>
+
+  <body>
+    <header>
+      <a href="#"><i>Enter</i></a>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </nav>
+      <a href="#"><button>Sign in / Sign up</button></a>
+    </header>
+
+    <main>
+      <section class="search-section">
+        <input type="text" placeholder="Search" id="search-bar" />
+        <button class="search-button">🔍</button>
+      </section>
+
+      <section class="categories">
+        <div class="category">
+          <h2>Vaatteet</h2>
+          <img src="vaatteet.jpg" alt="Vaatteet" />
+        </div>
+
+        <div class="category">
+          <h2>Hajuvesi</h2>
+          <img src="hajuvesi.jpg" alt="Hajuvesi" />
+        </div>
+
+        <div class="category">
+          <h2>Kirjat</h2>
+          <img src="kirjat.jpg" alt="Kirjat" />
+        </div>
+      </section>
+
+      <section class="feedback">
+        <h2>Give Feedback</h2>
+        <form id="feedbackForm">
+          <textarea
+            name="feedback"
+            placeholder="Share your feedback or product requests"
+          >
+          </textarea>
+          <br />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
