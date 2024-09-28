@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verkkokauppa</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Verkkokauppa</h1>
+      <div class="product-form">
+        <h2>Lisää tuote ostoskoriin</h2>
+        <label for="name">Tuotteen nimi:</label>
+        <input type="text" id="name" placeholder="Esim. Kirja" />
+
+        <label for="price">Hinta (€):</label>
+        <input type="number" id="price" placeholder="Esim. 25.00" />
+
+        <label for="quantity">Määrä:</label>
+        <input type="number" id="quantity" placeholder="Esim. 1" />
+
+        <!-- Ikonipainike lisäämiseen -->
+        <button id="addButton">
+          <i class="fas fa-cart-plus"></i> Lisää ostoskoriin
+        </button>
+      </div>
+
+      <div class="cart">
+        <h2>Ostoskori</h2>
+        <ul id="cartItems"></ul>
+        <h3>Kokonaishinta: <span id="totalCost">€0.00</span></h3>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

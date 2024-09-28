@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webpage</title>
+    <title>Verkkosivu</title>
     <link rel="stylesheet" href="verkkosivu.css" />
+    <script src="verkkosivu.js" defer></script>
   </head>
 
   <body>
@@ -14,47 +15,108 @@
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#">About us</a></li>
+          <li><a href="#" id="about-us-link">About us</a></li>
+          <li><a href="#" id="showCartButton">Näytä ostoskori</a></li>
         </ul>
       </nav>
-      <a href="#"><button>Sign in / Sign up</button></a>
+      <button id="login-btn">Sign in / Sign up</button>
     </header>
 
     <main>
+      <!-- About Us Section -->
+      <div id="info" style="display: none">
+        <p>Our organization is dedicated to providing excellent services...</p>
+      </div>
+
+      <!-- Search Section -->
       <section class="search-section">
         <input type="text" placeholder="Search" id="search-bar" />
         <button class="search-button">🔍</button>
       </section>
 
+      <!-- Categories Section -->
       <section class="categories">
         <div class="category">
           <h2>Vaatteet</h2>
-          <img src="vaatteet.jpg" alt="Vaatteet" />
+          <img src="vaatepino.jpg" alt="Vaatteet" />
         </div>
-
         <div class="category">
           <h2>Hajuvesi</h2>
           <img src="hajuvesi.jpg" alt="Hajuvesi" />
         </div>
-
         <div class="category">
           <h2>Kirjat</h2>
           <img src="kirjat.jpg" alt="Kirjat" />
         </div>
       </section>
 
+      <!-- Feedback Section -->
       <section class="feedback">
-        <h2>Give Feedback</h2>
+        <h2>Anna palautetta</h2>
         <form id="feedbackForm">
           <textarea
             name="feedback"
             placeholder="Share your feedback or product requests"
-          >
-          </textarea>
-          <br />
-          <button type="submit">Send</button>
+          ></textarea
+          ><br />
+          <button type="submit">Lähetä</button>
         </form>
       </section>
+
+      <!-- Shopping Cart Section -->
+      <section class="product-form">
+        <h2>Lisää tuote ostoskoriin</h2>
+        <label for="name">Tuotteen nimi:</label>
+        <input type="text" id="name" placeholder="Esim. Kirja" />
+        <label for="price">Hinta (€):</label>
+        <input type="number" id="price" placeholder="Esim. 25.00" />
+        <label for="quantity">Määrä:</label>
+        <input type="number" id="quantity" placeholder="Esim. 1" />
+        <button id="addButton">Lisää ostoskoriin</button>
+      </section>
+
+      <section id="cartSection" style="display: none">
+        <h2>Ostoskori</h2>
+        <ul id="cartItems"></ul>
+        <h3>Kokonaishinta: <span id="totalCost">€0.00</span></h3>
+        <button id="clearCartButton">Tyhjennä ostoskori</button>
+      </section>
+
+      <!-- Login Modal -->
+      <div id="loginModal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeLogin">&times;</span>
+          <h2>Kirjaudu sisään</h2>
+          <form id="loginForm">
+            <label for="loginEmail">Sähköposti:</label>
+            <input type="email" id="loginEmail" required />
+            <label for="loginPassword">Salasana:</label>
+            <input type="password" id="loginPassword" required />
+            <button type="submit">Kirjaudu</button>
+          </form>
+          <p>
+            Eikö sinulla ole tiliä?
+            <a href="#" id="signup-link">Rekisteröidy tästä</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Signup Modal -->
+      <div id="signupModal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeSignup">&times;</span>
+          <h2>Luo tili</h2>
+          <form id="signupForm">
+            <label for="signupEmail">Sähköposti:</label>
+            <input type="email" id="signupEmail" required />
+            <label for="signupPassword">Salasana:</label>
+            <input type="password" id="signupPassword" required />
+            <label for="confirmPassword">Vahvista salasana:</label>
+            <input type="password" id="confirmPassword" required />
+            <button type="submit">Rekisteröidy</button>
+          </form>
+        </div>
+      </div>
     </main>
   </body>
 </html>
